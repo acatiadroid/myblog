@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Add post</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/feed">Feed</a></li>
+        <li style="float:right;"><a href="/acatia/adminPanel">Admin Panel</a></li>
+    </ul>
+    <div class="main">
+        <h1>Admin Panel</h1>
+
+        <form method="post">
+            <p>Post URL title (no spaces - use dashes)</p>
+            <input name="title" type="text" placeholder="Enter URL title">
+            <p>Post display title</p>
+            <input name="disp-title" type="text" placeholder="Enter display title">
+            <p>Post main body</p>
+            <textarea name="mainbody" placeholder="Enter main body" rows="5" cols="60"></textarea>
+            <br/><input type="submit" value="Add post">
+        </form>
+    </div>
+</body>
+</html>

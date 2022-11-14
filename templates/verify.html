@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Verify yourself</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/feed">Feed</a></li>
+        <li style="float:right;"><a href="/acatia/adminPanel">Admin Panel</a></li>
+    </ul>
+    <div class="main">
+        <h1>Admin Panel</h1>
+        {% if verify %}
+            <p>Enter password to gain entry.</p>
+            <form method="post">
+                <input name="pass" id="pass" type="password" placeholder="Enter password">
+                <input type="submit" value="Submit">
+            </form>
+            {% if wrong %}
+                <p style="color: red;">Wrong</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>

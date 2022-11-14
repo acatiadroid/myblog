@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Feed</title>
+    <style>
+        .Sep {
+            border-top:1px solid #5f656d;
+            height:1px;
+            margin:16px 0;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/feed">Feed</a></li>
+        <li style="float:right;"><a href="/acatia/adminPanel">Admin Panel</a></li>
+    </ul>
+    <div class="main">
+        <h1>My feed</h1>
+        <p>Some of my more recent posts</p>
+
+        {% for post in posts %}
+        <div class="card">
+            <div class="Sep"></div>
+            <a href="/post?name={{ post['url']}}"><h2>{{ post['title'] }}</h2></a>
+            <p>{{ post['body'] }}</p>
+        </div>
+            {% endfor %}
+    </div>
+</body>
+</html>
