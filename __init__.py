@@ -1,8 +1,14 @@
 from flask import Flask, render_template, redirect, request
 import psycopg2 as postgres
 import json
+import platform
 
-with open("secrets.json", "r") as f:
+if platform.system() == "Linux":
+    secrets_file = "/var/www/webapp/source/secrets.json"
+else:
+    secrets_file = "secrets.json"
+
+with open(secrets_file, "r") as f:
     js = json.load(f)
 
 conn = postgres.connect(
